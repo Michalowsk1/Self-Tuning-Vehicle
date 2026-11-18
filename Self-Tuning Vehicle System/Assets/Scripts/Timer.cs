@@ -12,41 +12,35 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bestTimeText;
     [SerializeField] private bool TimerStarted;
 
+    private float milli, sec, min;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
 
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (StartTimer)
-        {
-            OnStart();
-        }
-
-        if (TimerStarted)
-        {
-            FormatTime();
-        }
-        
-    }
-
-    void OnStart()
-    {
-        TimerStarted = true;
-        StartTimer = false;
+        FormatTime();
     }
 
     void FormatTime()
     {
-        float currentTime =+ Time.deltaTime;
+        milli = milli + (Time.deltaTime * 100f); //multiplied by 100 to simulate milliseconds
 
-        float minutes = Mathf.Floor(currentTime / 60);
-        float seconds = currentTime % 60;
-        float fraction = (currentTime * 100) % 100;
+        if (milli >= 100)
+        {
+            sec++;
+            milli = 0;
+        }
+        else if(sec >= 60)
+        {
+            min++;
+            sec = 0;
+        }
 
-        currentTimeText.text = String.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction);
+        currentTimeText.text = String.Format("{0:00}:{1:00}:{2:00}", min, sec, milli);
+        
     }
 }

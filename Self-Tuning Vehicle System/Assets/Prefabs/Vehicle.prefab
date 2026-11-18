@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6011275953192889232}
   - component: {fileID: 2334451339638181710}
   - component: {fileID: 4930553412448478071}
+  - component: {fileID: 4815370682948961513}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Car
@@ -182,6 +183,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7612258, y: 0.07783747}
   m_EdgeRadius: 0
+--- !u!114 &4815370682948961513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097635312881266140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48768951db814274abe8017a136082bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LapChecker
 --- !u!1 &5616303343134492775
 GameObject:
   m_ObjectHideFlags: 0
