@@ -22,6 +22,7 @@ public class Buttons : MonoBehaviour
 
     public void StartRace()
     {
+        TuningSystem.alreadyTunedUp = false;
         LapChecker.lapFinished = false;
 
         SystemManager.StartRace = true;
@@ -29,8 +30,6 @@ public class Buttons : MonoBehaviour
         Timer.StartTimer = true;
         Timer.ResetTimer = false;
         Timer.ResetTimeValues();
-
-        TuningSystem.alreadyTunedUp = false;
     }
 
     public void OpenConfiq()

@@ -10,7 +10,6 @@ public class TuningSystem : MonoBehaviour
     [SerializeField] public Dictionary<string, (bool wantsToChange, float currentValue, float variance, bool lastChangedHelped, bool lastValueWasPositive)> variablesInfo =
                          new Dictionary<string, (bool wantsToChange, float currentValue,  float variance, bool lastChangedHelped, bool lastValueWasPositive)>();
 
-    [SerializeField] private bool tuneUp;
     public static bool alreadyTunedUp;
     /*
     Each entry into this dictionary will include the variable as the key
@@ -20,7 +19,6 @@ public class TuningSystem : MonoBehaviour
 
     void Start()
     {
-        tuneUp = false;
         alreadyTunedUp = false;
 
         variablesInfo.Add("accelerationAdjuster", (true, vh.accelerationAdjuster, 0.075f, true, true));
@@ -36,10 +34,8 @@ public class TuningSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LapChecker.lapFinished)
-            tuneUp = true;
 
-        if (tuneUp && !alreadyTunedUp)
+        if (LapChecker.lapFinished && !alreadyTunedUp)
             Tuning();
     }
 
@@ -67,7 +63,6 @@ public class TuningSystem : MonoBehaviour
                 Switch(var.Key, changedValue);
             }
         }
-        tuneUp = false;
     }
 
     void Switch(string varName, float changedValue)
