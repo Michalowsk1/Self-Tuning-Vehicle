@@ -12,7 +12,7 @@ public class UIValuesUpdater : MonoBehaviour
     [SerializeField] TextMeshProUGUI AngledDetectDistanceText;
     [SerializeField] TextMeshProUGUI StraightDetectDistanceText;
 
-    [SerializeField] TuningSystem ts;
+    [SerializeField] VehicleBehaviour vh;
     void Start()
     {
         
@@ -21,12 +21,12 @@ public class UIValuesUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        accelerationAdjusterText.text = "Acceleration Ajustter: " + ts.variablesInfo["accelerationAdjuster"].currentValue;
-        speedUpIncrementText.text = "Speed Up Increment: " + ts.variablesInfo["speedUpIncrement"].currentValue;
-        MinimumSteeringPowerText.text = "Minimum Steering Power: " + ts.variablesInfo["minimumSteeringPower"].currentValue;
-        SteeringEnhancerText.text = "Steering Enhancer: " + ts.variablesInfo["steeringEnhancer"].currentValue;
-        SideDetectDistanceText.text = "Side Detect Distance: " + ts.variablesInfo["sideDetectDistance"].currentValue;
-        AngledDetectDistanceText.text = "Angled Detect Distance: " + ts.variablesInfo["angledDetectDistance"].currentValue;
-        StraightDetectDistanceText.text = "Straight Detect Distance: " + ts.variablesInfo["straightDetectDistance"].currentValue;
+        accelerationAdjusterText.text = "Acceleration Ajustter: " + vh.accelerationAdjuster;
+        speedUpIncrementText.text = "Speed Up Increment: " + vh.speedUpIncrement;
+        MinimumSteeringPowerText.text = "Minimum Steering Power: " + vh.minimumSteeringPower;
+        SteeringEnhancerText.text = "Steering Enhancer: " + vh.steeringEnhancer;
+        SideDetectDistanceText.text = "Side Detect Distance: " + vh.sideDetectDistance;
+        AngledDetectDistanceText.text = "Angled Detect Distance: " + vh.angledDetectDistance;
+        StraightDetectDistanceText.text = "Straight Detect Distance: " + vh.straightDetectDistance;
     }
 }

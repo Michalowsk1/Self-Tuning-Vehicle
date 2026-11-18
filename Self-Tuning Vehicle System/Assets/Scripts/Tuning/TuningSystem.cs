@@ -9,6 +9,9 @@ public class TuningSystem : MonoBehaviour
     [SerializeField] private VehicleBehaviour vh;
     [SerializeField] public Dictionary<string, (bool wantsToChange, float currentValue, float variance, bool lastChangedHelped, bool lastValueWasPositive)> variablesInfo =
                          new Dictionary<string, (bool wantsToChange, float currentValue,  float variance, bool lastChangedHelped, bool lastValueWasPositive)>();
+
+    [SerializeField] private bool tuneUp;
+    public static bool alreadyTunedUp;
     /*
     Each entry into this dictionary will include the variable as the key
     The tuple stores 4 sets of information, if the data wants to be changed, the spread of the variable/randomness, if the last changed helped and if the last action was adding a positive or a negative number
@@ -17,11 +20,14 @@ public class TuningSystem : MonoBehaviour
 
     void Start()
     {
+        tuneUp = false;
+        alreadyTunedUp = false;
+
         variablesInfo.Add("accelerationAdjuster", (true, vh.accelerationAdjuster, 0.075f, true, true));
         variablesInfo.Add("speedUpIncrement", (true, vh.speedUpIncrement, 0.0075f, true, true));
         variablesInfo.Add("minimumSteeringPower", (true, vh.minimumSteeringPower, 0.1375f, true, true));
         variablesInfo.Add("steeringEnhancer", (true, vh.steeringEnhancer, 0.1f, true, true));
-        variablesInfo.Add("sideDetectDistance", (true, vh.sideDetectDistance, 0.15f, true, true));
+        variablesInfo.Add("sideDetectDistance", (false, vh.sideDetectDistance, 0.15f, true, true));
         variablesInfo.Add("angledDetectDistance", (true, vh.angledDetectDistance, 0.2f, true, true));
         variablesInfo.Add("straightDetectDistance", (true, vh.straightDetectDistance, 0.15f, true, true));
 
@@ -30,11 +36,17 @@ public class TuningSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (LapChecker.lapFinished)
+            tuneUp = true;
+
+        if (tuneUp && !alreadyTunedUp)
+            Tuning();
     }
 
-    void TuningAcceleration()
+    void Tuning()
     {
+        alreadyTunedUp = true;
+
         foreach (KeyValuePair<string, (bool wantsToChange, float currentValue, float variance,
             bool lastChangedHelped, bool lastValuePositive)> var in variablesInfo)
         {
@@ -43,17 +55,19 @@ public class TuningSystem : MonoBehaviour
             else
             {
                 float rand = UnityEngine.Random.Range(-var.Value.variance, var.Value.variance);
+                float roundedRand = Mathf.Floor(rand * 1000) / 1000;
                 bool lastValueHelped = var.Value.lastChangedHelped;
                 bool lastValuePositive = var.Value.lastValuePositive;
 
                 
                 float direction = lastValueHelped == lastValuePositive ? 1f : -1f;
 
-                float changedValue = var.Value.currentValue + (rand * direction);
+                float changedValue = var.Value.currentValue + (roundedRand * direction);
 
                 Switch(var.Key, changedValue);
             }
         }
+        tuneUp = false;
     }
 
     void Switch(string varName, float changedValue)

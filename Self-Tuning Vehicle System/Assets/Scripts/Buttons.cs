@@ -22,6 +22,8 @@ public class Buttons : MonoBehaviour
         Timer.StartTimer = true;
         Timer.ResetTimer = false;
         Timer.ResetTimeValues();
+
+        TuningSystem.alreadyTunedUp = false;
     }
 
     void ManageStartRaceButton()
