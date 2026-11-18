@@ -19,7 +19,6 @@ public class VehicleBehaviour : MonoBehaviour
     public float sideDetectDistance = 3.0f;
     public float angledDetectDistance = 4.0f;
     public float straightDetectDistance = 5.0f;
-    float raycastDetectDistance = 0.0f;
 
     public bool[] sensorStatus = { false, false, false, false, false };
 
