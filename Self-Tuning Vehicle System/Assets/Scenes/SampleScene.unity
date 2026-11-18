@@ -2243,6 +2243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TuningSystem
   vh: {fileID: 717652815}
+  tuneUp: 0
 --- !u!1001 &525068391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4901,7 +4902,7 @@ MonoBehaviour:
   SideDetectDistanceText: {fileID: 16155714}
   AngledDetectDistanceText: {fileID: 125978085}
   StraightDetectDistanceText: {fileID: 1610085054}
-  ts: {fileID: 519420034}
+  vh: {fileID: 717652815}
 --- !u!4 &1416373577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8172141728575927223, guid: d1c44ea6f2e4a6242aab4a6e01110fe0, type: 3}
@@ -6273,7 +6274,7 @@ Transform:
   m_GameObject: {fileID: 1644019371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.065, y: 2.158, z: 0}
+  m_LocalPosition: {x: 13.01, y: 1.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
