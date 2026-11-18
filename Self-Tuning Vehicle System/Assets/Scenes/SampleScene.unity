@@ -2089,6 +2089,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2229,6 +2230,19 @@ MonoBehaviour:
   car: {fileID: 717652812}
   vh: {fileID: 717652815}
   startLine: {fileID: 1644019372}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d30344a7ebd664f822bfd9a4984464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TuningSystem
+  vh: {fileID: 717652815}
 --- !u!1001 &525068391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4839,6 +4853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1406673044}
+  - component: {fileID: 1406673045}
   m_Layer: 5
   m_Name: CurrentStats
   m_TagString: Untagged
@@ -4867,6 +4882,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -515}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1406673045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406673043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d4ff589c599a44f9877388e7479a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIValuesUpdater
+  accelerationAdjusterText: {fileID: 494683690}
+  speedUpIncrementText: {fileID: 689705937}
+  MinimumSteeringPowerText: {fileID: 1009054967}
+  SteeringEnhancerText: {fileID: 1554419665}
+  SideDetectDistanceText: {fileID: 16155714}
+  AngledDetectDistanceText: {fileID: 125978085}
+  StraightDetectDistanceText: {fileID: 1610085054}
+  ts: {fileID: 519420034}
 --- !u!4 &1416373577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8172141728575927223, guid: d1c44ea6f2e4a6242aab4a6e01110fe0, type: 3}

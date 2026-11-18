@@ -7,7 +7,7 @@ using UnityEngine;
 public class TuningSystem : MonoBehaviour
 {
     [SerializeField] private VehicleBehaviour vh;
-    [SerializeField] private Dictionary<string, (bool wantsToChange, float currentValue, float variance, bool lastChangedHelped, bool lastValueWasPositive)> variablesInfo =
+    [SerializeField] public Dictionary<string, (bool wantsToChange, float currentValue, float variance, bool lastChangedHelped, bool lastValueWasPositive)> variablesInfo =
                          new Dictionary<string, (bool wantsToChange, float currentValue,  float variance, bool lastChangedHelped, bool lastValueWasPositive)>();
     /*
     Each entry into this dictionary will include the variable as the key
