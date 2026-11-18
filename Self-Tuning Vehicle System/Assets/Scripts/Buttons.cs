@@ -4,9 +4,16 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     [SerializeField] private Button startRaceButton;
+    [SerializeField] private GameObject configScreen;
+
     public void CloseProgram()
     {
         Application.Quit();
+    }
+
+    void Start()
+    {
+        configScreen.SetActive(false);
     }
     void FixedUpdate()
     {
@@ -24,6 +31,11 @@ public class Buttons : MonoBehaviour
         Timer.ResetTimeValues();
 
         TuningSystem.alreadyTunedUp = false;
+    }
+
+    public void OpenConfiq()
+    {
+        configScreen.SetActive(!configScreen.activeSelf);
     }
 
     void ManageStartRaceButton()

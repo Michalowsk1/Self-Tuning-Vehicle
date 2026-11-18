@@ -21,7 +21,7 @@ public class UIValuesUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        accelerationAdjusterText.text = "Acceleration Ajustter: " + vh.accelerationAdjuster;
+        accelerationAdjusterText.text = "Acceleration Ajuster: " + vh.accelerationAdjuster;
         speedUpIncrementText.text = "Speed Up Increment: " + vh.speedUpIncrement;
         MinimumSteeringPowerText.text = "Minimum Steering Power: " + vh.minimumSteeringPower;
         SteeringEnhancerText.text = "Steering Enhancer: " + vh.steeringEnhancer;
