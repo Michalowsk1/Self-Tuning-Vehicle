@@ -59,7 +59,7 @@ public class TuningSystem : MonoBehaviour
 
                 float changedValue = var.Value.currentValue + (roundedRand * direction);
 
-                bool wasLastValuePositive = (roundedRand * direction) > 0;
+                bool wasLastValuePositive = (roundedRand * direction) < 0;
 
                 savedChanges.Add(var.Key, (changedValue, wasLastValuePositive));
 

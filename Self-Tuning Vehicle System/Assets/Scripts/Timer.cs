@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
     void ManageEndOfLapBehaviour()
     {
         StartTimer = false;
-        if (bestTime > FinalTime(milli, sec, min) && FinalTime(milli, sec, min) > 150) // stops from clipping at the start of the race setting impossibly low values
+        if (bestTime > FinalTime(milli, sec, min)) 
         {
             bestTime = FinalTime(milli, sec, min);
             bestTimeText.text = String.Format("{0:00}:{1:00}:{2:00}", min, sec, milli);
