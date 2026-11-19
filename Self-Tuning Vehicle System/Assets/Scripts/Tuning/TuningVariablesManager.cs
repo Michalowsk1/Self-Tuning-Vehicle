@@ -8,6 +8,7 @@ public class TuningVariablesManager : MonoBehaviour
     [SerializeField] private Toggle toggle;
     [SerializeField] private TMP_InputField globalValue;
     [SerializeField] private TMP_InputField varianceValue;
+    [SerializeField] private TextMeshProUGUI varianceValueText;
     void Start()
     {
         
@@ -30,5 +31,7 @@ public class TuningVariablesManager : MonoBehaviour
     {
         ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, float.Parse(varianceValue.text),
                                         ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
+
+        varianceValueText.text = "Variance: " + ts.variablesInfo[gameObject.name].variance;
     }
 }
