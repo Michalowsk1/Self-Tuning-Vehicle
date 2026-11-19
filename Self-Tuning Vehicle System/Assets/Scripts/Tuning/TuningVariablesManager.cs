@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,8 +6,8 @@ public class TuningVariablesManager : MonoBehaviour
 {
     [SerializeField] private TuningSystem ts;
     [SerializeField] private Toggle toggle;
-    [SerializeField] private InputField globalValue;
-    [SerializeField] private InputField varianceValue;
+    [SerializeField] private TMP_InputField globalValue;
+    [SerializeField] private TMP_InputField varianceValue;
     void Start()
     {
         
@@ -17,17 +18,17 @@ public class TuningVariablesManager : MonoBehaviour
     {
         ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, ts.variablesInfo[gameObject.name].variance,
                                             ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
+    }
 
-        if(globalValue != null)
-        {
-            ts.variablesInfo[gameObject.name] = (toggle.isOn, int.Parse(globalValue.text), ts.variablesInfo[gameObject.name].variance,
+    public void UpdateGlobalValue()
+    {
+        ts.variablesInfo[gameObject.name] = (toggle.isOn, float.Parse(globalValue.text), ts.variablesInfo[gameObject.name].variance,
                                             ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
-        }
+    }
 
-        if(varianceValue != null)
-        {
-            ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, int.Parse(varianceValue.text),
-                                            ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
-        }
+    public void UpdateVarianceValue()
+    {
+        ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, float.Parse(varianceValue.text),
+                                        ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
     }
 }

@@ -10,6 +10,8 @@ public class TuningSystem : MonoBehaviour
     [SerializeField] public Dictionary<string, (bool wantsToChange, float currentValue, float variance, bool lastChangedHelped, bool lastValueWasPositive)> variablesInfo =
                          new Dictionary<string, (bool wantsToChange, float currentValue,  float variance, bool lastChangedHelped, bool lastValueWasPositive)>();
 
+    [SerializeField] private Dictionary<string, float> savedChanges = new Dictionary<string, float> ();
+
     public static bool alreadyTunedUp;
     /*
     Each entry into this dictionary will include the variable as the key
@@ -60,9 +62,12 @@ public class TuningSystem : MonoBehaviour
 
                 float changedValue = var.Value.currentValue + (roundedRand * direction);
 
+                savedChanges.Add(var.Key, changedValue);
+
                 Switch(var.Key, changedValue);
             }
         }
+        VisualSync();
     }
 
     void Switch(string varName, float changedValue)
@@ -97,5 +102,16 @@ public class TuningSystem : MonoBehaviour
                 vh.straightDetectDistance = changedValue;
                 break;
         }
+    }
+
+    void VisualSync()
+    {
+        foreach(KeyValuePair<string, float> var in savedChanges)
+        {
+            variablesInfo[var.Key] = (variablesInfo[var.Key].wantsToChange, var.Value, variablesInfo[var.Key].variance,
+                                      variablesInfo[var.Key].lastChangedHelped, variablesInfo[var.Key].lastValueWasPositive);
+
+        }
+        savedChanges.Clear();
     }
 }

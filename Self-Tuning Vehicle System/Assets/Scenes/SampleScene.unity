@@ -3394,7 +3394,7 @@ MonoBehaviour:
   SideDetectDistanceText: {fileID: 485192153}
   AngledDetectDistanceText: {fileID: 1717842850}
   StraightDetectDistanceText: {fileID: 493988288}
-  vh: {fileID: 717652815}
+  ts: {fileID: 519420034}
 --- !u!224 &653448129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3738,6 +3738,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &725532594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7283820800828738103, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+  m_PrefabInstance: {fileID: 2701437053011937790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!1 &730329281
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,6 +4161,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8172141728575927223, guid: d1c44ea6f2e4a6242aab4a6e01110fe0, type: 3}
   m_PrefabInstance: {fileID: 1070955498}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &860656080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+  m_PrefabInstance: {fileID: 2701437053011937790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_InputField
 --- !u!1 &863343036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4276,6 +4298,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &879278563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+  m_PrefabInstance: {fileID: 2701437053011937790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_InputField
 --- !u!4 &883372688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8172141728575927223, guid: d1c44ea6f2e4a6242aab4a6e01110fe0, type: 3}
@@ -6197,6 +6230,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6696036593486870100, guid: e49a87c305fb9184a8c6ed3bf660065f, type: 3}
   m_PrefabInstance: {fileID: 1312856816}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1379092824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9045993018416445013, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+  m_PrefabInstance: {fileID: 2701437053011937790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e8aac00b9f7ea4ea9297d3fc8c4112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TuningVariablesManager
 --- !u!1001 &1406106535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6320,7 +6364,7 @@ MonoBehaviour:
   SideDetectDistanceText: {fileID: 16155714}
   AngledDetectDistanceText: {fileID: 125978085}
   StraightDetectDistanceText: {fileID: 1610085054}
-  vh: {fileID: 717652815}
+  ts: {fileID: 519420034}
 --- !u!4 &1416373577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8172141728575927223, guid: d1c44ea6f2e4a6242aab4a6e01110fe0, type: 3}
@@ -9647,6 +9691,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: accelerationAdjuster
       objectReference: {fileID: 0}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1379092824}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateVarianceValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TuningVariablesManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692694780336074498, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_ContentType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_KeyboardType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_CharacterValidation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1379092824}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateGlobalValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TuningVariablesManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804528007283660471, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8074903182584279919, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9727,6 +9839,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9045993018416445013, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: ts
+      value: 
+      objectReference: {fileID: 519420034}
+    - target: {fileID: 9045993018416445013, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 725532594}
+    - target: {fileID: 9045993018416445013, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: globalValue
+      value: 
+      objectReference: {fileID: 860656080}
+    - target: {fileID: 9045993018416445013, guid: 8f8da334ed6c4104f8054031b510df80, type: 3}
+      propertyPath: varianceValue
+      value: 
+      objectReference: {fileID: 879278563}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

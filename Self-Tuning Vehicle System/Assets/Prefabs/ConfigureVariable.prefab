@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 8074903182584279919}
   - component: {fileID: 5505730268651540182}
   - component: {fileID: 3646598915290128211}
+  - component: {fileID: 9045993018416445013}
   m_Layer: 5
   m_Name: ConfigureVariable
   m_TagString: Untagged
@@ -300,6 +301,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &9045993018416445013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240893261999884505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e8aac00b9f7ea4ea9297d3fc8c4112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TuningVariablesManager
+  ts: {fileID: 0}
+  toggle: {fileID: 0}
+  globalValue: {fileID: 0}
+  varianceValue: {fileID: 0}
 --- !u!1 &1071393681801504710
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +890,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9045993018416445013}
+        m_TargetAssemblyTypeName: TuningVariablesManager, Assembly-CSharp
+        m_MethodName: UpdateVarianceValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -1188,7 +1217,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9045993018416445013}
+        m_TargetAssemblyTypeName: TuningVariablesManager, Assembly-CSharp
+        m_MethodName: UpdateGlobalValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
