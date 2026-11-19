@@ -6,9 +6,11 @@ public class Buttons : MonoBehaviour
     [SerializeField] private Button startRaceButton;
     [SerializeField] private Button ConfigurationButton;
     [SerializeField] private GameObject configScreen;
+    [SerializeField] private GameObject InfoScreen;
 
     [SerializeField] private VehicleBehaviour vh;
     [SerializeField] private TuningSystem ts;
+    [SerializeField] private Timer t;
 
     public void CloseProgram()
     {
@@ -18,6 +20,7 @@ public class Buttons : MonoBehaviour
     void Start()
     {
         configScreen.SetActive(false);
+        InfoScreen.SetActive(false);
     }
     void FixedUpdate()
     {
@@ -48,6 +51,17 @@ public class Buttons : MonoBehaviour
     public void OpenConfiq()
     {
         configScreen.SetActive(!configScreen.activeSelf);
+    }
+
+    public void OpenInfo()
+    {
+        InfoScreen.SetActive(!InfoScreen.activeSelf);
+    }
+
+    public void ResetBestTime()
+    {
+        t.bestTime = float.MaxValue;
+        t.bestTimeText.text = "00:00:00";
     }
 
     public void ResetToDefault()

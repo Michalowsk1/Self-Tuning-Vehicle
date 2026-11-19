@@ -8,9 +8,9 @@ public class Timer : MonoBehaviour
     public static bool ResetTimer;
 
     [SerializeField] private TextMeshProUGUI currentTimeText;
-    [SerializeField] private TextMeshProUGUI bestTimeText;
+    [SerializeField] public TextMeshProUGUI bestTimeText;
     [SerializeField] private bool TimerStarted;
-    [SerializeField] private float bestTime;
+    [SerializeField] public float bestTime;
 
     private static float milli, sec, min;
     public static bool timeImproved;
@@ -57,7 +57,6 @@ public class Timer : MonoBehaviour
     void ManageEndOfLapBehaviour()
     {
         StartTimer = false;
-
         if (bestTime > FinalTime(milli, sec, min) && FinalTime(milli, sec, min) > 150) // stops from clipping at the start of the race setting impossibly low values
         {
             bestTime = FinalTime(milli, sec, min);
