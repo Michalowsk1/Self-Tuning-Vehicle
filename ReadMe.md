@@ -60,6 +60,8 @@ best time as a really small impossible to beat value, this is what the 'Reset Be
 
 a race has started, as it's still storing the last lap time.
 
+* When a race is started the 'Start Race' and 'Configuration' buttons can't be accessed until the lap is either restarted or the lap is finished.
+
 
 
 
