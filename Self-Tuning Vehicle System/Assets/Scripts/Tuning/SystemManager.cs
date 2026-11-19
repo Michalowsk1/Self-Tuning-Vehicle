@@ -3,6 +3,7 @@ using UnityEngine;
 public class SystemManager : MonoBehaviour
 {
     public static bool StartRace;
+    public static bool RaceReset;
     public static bool RaceRunning;
 
     [SerializeField] private GameObject car;
@@ -24,7 +25,11 @@ public class SystemManager : MonoBehaviour
             RaceRunning = true;
         }
 
-
+        if(RaceReset)
+        {
+            RaceRunning = false;
+            ManageVehicleReset();
+        }
 
         if(LapChecker.lapFinished)
         {

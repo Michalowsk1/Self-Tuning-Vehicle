@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     [SerializeField] private Button startRaceButton;
+    [SerializeField] private Button ConfigurationButton;
     [SerializeField] private GameObject configScreen;
 
     public void CloseProgram()
@@ -17,7 +18,7 @@ public class Buttons : MonoBehaviour
     }
     void FixedUpdate()
     {
-        ManageStartRaceButton();
+        ManageButtons();
     }
 
     public void StartRace()
@@ -26,9 +27,18 @@ public class Buttons : MonoBehaviour
         LapChecker.lapFinished = false;
 
         SystemManager.StartRace = true;
+        SystemManager.RaceReset = false;
 
         Timer.StartTimer = true;
         Timer.ResetTimer = false;
+        Timer.ResetTimeValues();
+    }
+
+    public void ResetRace()
+    {
+        SystemManager.StartRace = false;
+        SystemManager.RaceReset = true;
+        Timer.StartTimer = false;
         Timer.ResetTimeValues();
     }
 
@@ -37,11 +47,17 @@ public class Buttons : MonoBehaviour
         configScreen.SetActive(!configScreen.activeSelf);
     }
 
-    void ManageStartRaceButton()
+    void ManageButtons()
     {
         if (SystemManager.RaceRunning)
+        {
             startRaceButton.enabled = false;
+            ConfigurationButton.enabled = false;
+        }
         else
+        {
             startRaceButton.enabled = true;
+            ConfigurationButton.enabled = true;
+        }
     }
 }

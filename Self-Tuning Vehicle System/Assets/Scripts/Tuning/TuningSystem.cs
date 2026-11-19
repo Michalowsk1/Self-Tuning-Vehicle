@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Reflection;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TuningSystem : MonoBehaviour
@@ -37,7 +34,7 @@ public class TuningSystem : MonoBehaviour
     void Update()
     {
 
-        if (LapChecker.lapFinished && !alreadyTunedUp)
+        if (LapChecker.lapFinished && !alreadyTunedUp && !SystemManager.RaceReset)
             Tuning();
     }
 
