@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 3974079919025854381, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: minimumSteeringPower
@@ -401,6 +405,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 3974079919025854381, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: speedUpIncrement
@@ -530,6 +538,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 3974079919025854381, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: sideDetectDistance
@@ -1826,6 +1838,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 3974079919025854381, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: steeringEnhancer
@@ -2562,6 +2578,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 6134389395067859658, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: TuningVariablePrefab
@@ -4724,6 +4744,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 3974079919025854381, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: straightDetectDistance
@@ -9062,6 +9086,10 @@ PrefabInstance:
       propertyPath: ts
       value: 
       objectReference: {fileID: 519420034}
+    - target: {fileID: 2498025318699212677, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
+      propertyPath: vh
+      value: 
+      objectReference: {fileID: 717652815}
     - target: {fileID: 3974079919025854381, guid: 7056f516f2256ef488fe91c03b8ef34d, type: 3}
       propertyPath: m_Name
       value: angledDetectDistance

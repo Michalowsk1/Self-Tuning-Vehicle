@@ -27,6 +27,9 @@ public class TuningVariablesManager : MonoBehaviour
 
     public void UpdateGlobalValue()
     {
+        if (globalValue.text == null)
+            return;
+
         ts.variablesInfo[gameObject.name] = (toggle.isOn, float.Parse(globalValue.text), ts.variablesInfo[gameObject.name].variance,
                                             ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
 
@@ -64,6 +67,9 @@ public class TuningVariablesManager : MonoBehaviour
 
     public void UpdateVarianceValue()
     {
+        if (varianceValue.text == null)
+            return;
+
         ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, float.Parse(varianceValue.text),
                                         ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
     }
