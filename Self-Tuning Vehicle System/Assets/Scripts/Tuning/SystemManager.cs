@@ -43,6 +43,7 @@ public class SystemManager : MonoBehaviour
     {
         car.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         car.transform.position = new Vector3(startLine.position.x, startLine.position.y, car.transform.position.z);
+        car.transform.localEulerAngles = new Vector3(car.transform.localEulerAngles.x, car.transform.localEulerAngles.y, -90);
         vh.speedUpPower = 0;
         vh.enabled = false;
 
