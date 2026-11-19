@@ -10,7 +10,7 @@ public class TuningSystem : MonoBehaviour
     [SerializeField] public Dictionary<string, (bool wantsToChange, float currentValue, float variance, bool lastChangedHelped, bool lastValueWasPositive)> variablesInfo =
                          new Dictionary<string, (bool wantsToChange, float currentValue,  float variance, bool lastChangedHelped, bool lastValueWasPositive)>();
 
-    [SerializeField] private Dictionary<string, float> savedChanges = new Dictionary<string, float> ();
+    [SerializeField] private Dictionary<string, (float, bool)> savedChanges = new Dictionary<string, (float, bool)> ();
 
     public static bool alreadyTunedUp;
     /*
@@ -62,12 +62,14 @@ public class TuningSystem : MonoBehaviour
 
                 float changedValue = var.Value.currentValue + (roundedRand * direction);
 
-                savedChanges.Add(var.Key, changedValue);
+                bool wasLastValuePositive = (roundedRand * direction) > 0;
+
+                savedChanges.Add(var.Key, (changedValue, wasLastValuePositive));
 
                 Switch(var.Key, changedValue);
             }
         }
-        VisualSync();
+        VisualAndLogicalSync();
     }
 
     void Switch(string varName, float changedValue)
@@ -104,12 +106,17 @@ public class TuningSystem : MonoBehaviour
         }
     }
 
-    void VisualSync()
+    void VisualAndLogicalSync()
     {
-        foreach(KeyValuePair<string, float> var in savedChanges)
+        foreach(KeyValuePair<string, (float, bool)> var in savedChanges)
         {
-            variablesInfo[var.Key] = (variablesInfo[var.Key].wantsToChange, var.Value, variablesInfo[var.Key].variance,
-                                      variablesInfo[var.Key].lastChangedHelped, variablesInfo[var.Key].lastValueWasPositive);
+            bool helped = false;
+
+            if(Timer.timeImproved)
+                helped = true;
+
+            variablesInfo[var.Key] = (variablesInfo[var.Key].wantsToChange, var.Value.Item1, variablesInfo[var.Key].variance, helped, var.Value.Item2);
+
 
         }
         savedChanges.Clear();

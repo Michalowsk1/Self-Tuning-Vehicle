@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
@@ -14,11 +16,13 @@ public class Timer : MonoBehaviour
     [SerializeField] private float bestTime;
 
     private static float milli, sec, min;
+    public static bool timeImproved;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         bestTime = float.MaxValue;
+        timeImproved = false;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -57,13 +61,16 @@ public class Timer : MonoBehaviour
     {
         StartTimer = false;
 
-        if(bestTime > FinalTime(milli, sec, min) && FinalTime(milli, sec, min) > 150)
+        if (bestTime > FinalTime(milli, sec, min) && FinalTime(milli, sec, min) > 150) // stops from clipping at the start of the race setting impossibly low values
         {
             bestTime = FinalTime(milli, sec, min);
             bestTimeText.text = String.Format("{0:00}:{1:00}:{2:00}", min, sec, milli);
+            timeImproved = true;
         }
+        else
+            timeImproved = false;
 
-        ResetTimer = true;
+            ResetTimer = true;
     }
 
     float FinalTime(float milli, float sec, float min)
