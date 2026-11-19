@@ -57,7 +57,7 @@ public class Timer : MonoBehaviour
     {
         StartTimer = false;
 
-        if(bestTime > FinalTime(milli, sec, min))
+        if(bestTime > FinalTime(milli, sec, min) && FinalTime(milli, sec, min) > 150)
         {
             bestTime = FinalTime(milli, sec, min);
             bestTimeText.text = String.Format("{0:00}:{1:00}:{2:00}", min, sec, milli);

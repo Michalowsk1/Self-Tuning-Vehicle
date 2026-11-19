@@ -17,6 +17,8 @@ public class TuningVariablesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        varianceValueText.text = "Variance: " + ts.variablesInfo[gameObject.name].variance;
+
         ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, ts.variablesInfo[gameObject.name].variance,
                                             ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
     }
@@ -31,7 +33,5 @@ public class TuningVariablesManager : MonoBehaviour
     {
         ts.variablesInfo[gameObject.name] = (toggle.isOn, ts.variablesInfo[gameObject.name].currentValue, float.Parse(varianceValue.text),
                                         ts.variablesInfo[gameObject.name].lastChangedHelped, ts.variablesInfo[gameObject.name].lastValueWasPositive);
-
-        varianceValueText.text = "Variance: " + ts.variablesInfo[gameObject.name].variance;
     }
 }
