@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentTimeText;
     [SerializeField] public TextMeshProUGUI bestTimeText;
     [SerializeField] private bool TimerStarted;
-    [SerializeField] public float bestTime;
+    [SerializeField] public static float bestTime;
 
     private static float milli, sec, min;
     public static bool timeImproved;
@@ -69,7 +69,7 @@ public class Timer : MonoBehaviour
             ResetTimer = true;
     }
 
-    float FinalTime(float milli, float sec, float min)
+    static float FinalTime(float milli, float sec, float min)
     {
         return (min * 3600) + (sec * 60) + milli;
     }
@@ -77,5 +77,13 @@ public class Timer : MonoBehaviour
     public static void ResetTimeValues()
     {
         milli = 0; sec = 0; min = 0;
+    }
+
+    public static bool HasimeImproved()
+    {
+        if (bestTime > FinalTime(milli,sec,min))
+            return true;
+        else
+            return false;
     }
 }

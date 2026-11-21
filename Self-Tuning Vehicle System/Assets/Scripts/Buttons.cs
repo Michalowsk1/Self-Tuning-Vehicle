@@ -60,7 +60,7 @@ public class Buttons : MonoBehaviour
 
     public void ResetBestTime()
     {
-        t.bestTime = float.MaxValue;
+        Timer.bestTime = float.MaxValue;
         t.bestTimeText.text = "00:00:00";
     }
 

@@ -10,6 +10,8 @@ public class TuningSystem : MonoBehaviour
     [SerializeField] private Dictionary<string, (float, bool)> savedChanges = new Dictionary<string, (float, bool)> ();
 
     public static bool alreadyTunedUp;
+    public float changedValue;
+    public float direction;
     /*
     Each entry into this dictionary will include the variable as the key
     The tuple stores 4 sets of information, if the data wants to be changed, the spread of the variable/randomness, if the last changed helped and if the last action was adding a positive or a negative number
@@ -54,12 +56,16 @@ public class TuningSystem : MonoBehaviour
                 bool lastValueHelped = var.Value.lastChangedHelped;
                 bool lastValuePositive = var.Value.lastValuePositive;
 
-                
-                float direction = lastValueHelped == lastValuePositive ? 1f : -1f;
+                direction = 0.0f;
 
-                float changedValue = var.Value.currentValue + (roundedRand * direction);
+                if ((lastValueHelped && lastValuePositive) || (lastValueHelped && !lastValuePositive))
+                    changedValue = var.Value.currentValue + Mathf.Abs(roundedRand);
 
-                bool wasLastValuePositive = (roundedRand * direction) < 0;
+                else if ((!lastValueHelped && lastValuePositive) || (!lastValueHelped && !lastValuePositive))
+                    changedValue = var.Value.currentValue + -Mathf.Abs(roundedRand);
+
+
+                bool wasLastValuePositive = (roundedRand) > 0;
 
                 savedChanges.Add(var.Key, (changedValue, wasLastValuePositive));
 
@@ -107,14 +113,7 @@ public class TuningSystem : MonoBehaviour
     {
         foreach(KeyValuePair<string, (float, bool)> var in savedChanges)
         {
-            bool helped = false;
-
-            if(Timer.timeImproved)
-                helped = true;
-
-            variablesInfo[var.Key] = (variablesInfo[var.Key].wantsToChange, var.Value.Item1, variablesInfo[var.Key].variance, helped, var.Value.Item2);
-
-
+            variablesInfo[var.Key] = (variablesInfo[var.Key].wantsToChange, var.Value.Item1, variablesInfo[var.Key].variance, Timer.HasimeImproved(), var.Value.Item2);
         }
         savedChanges.Clear();
     }
